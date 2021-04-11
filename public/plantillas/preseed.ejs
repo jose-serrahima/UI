@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+    
+<html>
+<head>
+    <script type="text/javascript" src="./js/funciones.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="cabecera" style="width: 100%;border-bottom: black solid 1px;">
+        <%- include('./cabecera'); %>
+    </div>
+    
+    <div id="menu_izquierdo" style="width: 20%;border-right: black solid 1px; border-bottom: black solid 1px;"> 
+        <%- include('./menu_lateral'); %>    
+    </div>
+
+
+    <form method="post" action="/preseed"> 
+        
+        <div id="configuracion_red">
+            <h3>Configuración de red</h3>
+
+            
+        </div>
+        
+        
+        
+        
+        <table>
+            <tr> <th>
+                Parámetro</th> <th>Valor</th></tr>
+            <% parametros.forEach(function(propiedad){ %>                
+                <tr>
+                    <td><%=propiedad.clave%></td>
+                    <td>
+                        <input id="<%=propiedad.clave%>" name="<%=propiedad.clave%>" value="<%=propiedad.valor%>"/>
+                    </td>
+                </tr>                
+            <%});%>
+        </table>
+        
+
+        <div id="controles">
+            <div id="botones"> 
+                <input type="submit" id="guardar" value="Guardar"></input>
+            </div>
+        </div>
+    </form>    
+</body>
+
+</html>

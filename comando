@@ -1,0 +1,7 @@
+echo "introduce tu nombre :";
+read a;
+echo "tu nombre es: $a";
+
+exit 0;
+
+
